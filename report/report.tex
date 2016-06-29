@@ -1,0 +1,46 @@
+% LDV Vorlage zuerst installieren
+% Zip verfügbar unter: https://www.ldv.ei.tum.de/studentische-arbeiten/
+%
+% Alternative Typen von Abschlussarbeiten
+%   doctype=Studienarbeit
+%   doctype=Bachelorthesis
+%   doctype=Diplomarbeit
+%   doctype=Mastersthesis
+%
+% Sprachen
+%   ohne lang-Attribut:  Englisch
+%   lang=ngerman:        Neue deutsche Rechtschreibung
+\documentclass[doctype=Studienarbeit]{ldvbook}
+
+
+\begin{document}
+
+\title{uFixit - An Augmented Reality Product Concept}
+\author{[Name of Author]}
+\license{CC-BY}
+\supervisor{Dr. Hao Shen}
+
+\maketitle
+
+
+\chapter*{Abstract}
+
+Eine Zusammenfassung der Problemstellung und der wichtigsten
+Ergebnisse auf maximal einer Seite.
+
+
+\tableofcontents
+
+
+\include{cap-01-introduction}
+\include{cap-02-product}
+\include{cap-03-realization-problems}
+\include{cap-04-business}
+
+
+
+% Das folgende LaTeX-Makro erzeugt aus der Datei diplomarbeit.bib das
+% Literaturverzeichnis.
+\bibliography{diplomarbeit}
+
+\end{document}

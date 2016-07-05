@@ -1,17 +1,37 @@
 % !TeX spellcheck = en_US
 
 \chapter{Introduction}
+
+	Everyone of us already had to deal with a defective consumer product. Years ago there was a good chance you could repair it by yourself. But with electronics getting more complex and integrated into nearly everything we own, this is becoming impossible.
 	
-	problem: "things" get more complicated each day. additionally, these last years, repairing stuff has become nearly impossible.
+	One of the best examples are laptops. They originated from a - by design - highly modular hardware system. Every part has a standardized connector that makes it possible to build up a computer out of components from various manufacturers. But due to market demand the devices had to shrink more and more. To cope with the hassle of little space, manufactures began to integrate these single components in one another. This greatly reduces the overall product size.
 	
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{../images/ifixit-macbook-parts.jpg}
+		\centering
+		\caption[Disassembled Apple MacBook 2015 that got a iFixit Repairability Score of 1 out of 10]{Disassembled Apple MacBook 2015 that got a iFixit Repairability Score of 1 out of 10\footnotemark}
+		\label{fig:ifixit-macbook-parts}
+	\end{figure}
+	\footnotetext{\url{https://de.ifixit.com/Teardown/Retina+MacBook+2015+Teardown/39841}}
 	
-	\begin{itemize}
-		\itemsep0em
-		\item mobile phones get less and less parts > even batteries are not replaceable anymore
-		\item cars include expensive electronics in every single part
-		\item solely from mechanical party consisting products are most likely made out of cheap irreplaceable plastic parts
-	\end{itemize}
+	The most recent achievement of these politics can be seen in \autoref{fig:ifixit-macbook-parts}. The Apple MacBook 2015 is extremely thin which led the engineers few possibilities regarding the size of the electronics. Contradicting the traditional modular idea, everything from CPU to flash memory is soldered onto one single circuit board. It can only be replaced as one expensive part, but only if this is possible at all. The use of special adhesive saves the space needed for screws, yet it is not possible to handle for an end user.
 	
+	Of course this is not limited to mobile computer hardware. In almost every industry products become less and less fixable. Where 30 years ago you could repair your car by replacing the broken part in a straightforward way, nowadays you do not even know whats defective without the help of professionals.
+	
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{../images/common-manual.png}
+		\centering
+		\caption[Typical step-by-step manual for business laptop hardware, taken from Hardware Maintainance Manual by Lenovo Thinkpad]{Typical step-by-step manual for business laptop hardware, taken from Hardware Maintainance Manual by Lenovo Thinkpad\footnotemark}
+		\label{fig:lenovo-hardware-manual}
+	\end{figure}
+	\footnotetext{\url{https://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles_pdf/t440s_hmm_en_sp40a25360_04.pdf}}
+	
+	\textit{Furthermore the manufacturers do not want you to refurbish a product. They want you as the end user to buy new things.}
+	
+	Solely the business sector demands products that are serviceable. \autoref{fig:lenovo-hardware-manual} shows an excerpt from a hardware maintenance manual for a professional business notebook by Lenovo. Almost all parts of this laptop are replaceable when following the instructions. But creating this manual, providing spare parts for end users and most importantly design the product in a way it can be easily fixed are pretty expensive. This effort will be omitted with consumer products.
+	
+	\paragraph{So what can you do?}
+
 	solution:
 	\begin{itemize}
 		\itemsep0em
@@ -21,12 +41,7 @@
 			\item with the help of the manufacture \begin{itemize}
 				\item not really wanted > a repaired product last longer and shrinks profits from selling new product
 				\item nowadays only for professional equipment (business laptops, ...)
-					\begin{figure}[H]
-						\includegraphics[width=\textwidth]{../images/common-manual.png}
-						\centering
-						\caption[Typical step-by-step manual for business laptop hardware, taken from Hardware Maintainance Manual by Lenovo Thinkpad]{Typical step-by-step manual for business laptop hardware, taken from Hardware Maintainance Manual by Lenovo Thinkpad\footnotemark}
-					\end{figure}
-					\footnotetext{\url{https://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles_pdf/t440s_hmm_en_sp40a25360_04.pdf}}
+					
 					\begin{figure}[H]
 						\includegraphics[width=0.9\textwidth]{../images/bosch-flex-inspect.jpg}
 						\centering

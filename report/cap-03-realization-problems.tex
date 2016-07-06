@@ -3,6 +3,7 @@
 \chapter{AR specific problems regarding realization}
 
 \section{Hardware}
+\label{sec:hardware}
 
 Before going into detail about the hardware components of uFixit, we first have to specify the requirements, which the hardware has to fulfill. Firstly, the hardware has to be mobile, so that the user can take the instructions to the item he wants to repair. This is especially important, if the item in question is too heavy to be moved, or is firmly mounted to its location. Therefore, the uFixit hardware has to be small and light enough to be carried around, and also has to assemble and disassemble quickly.
 This also rules out head tracking systems for the augmented experience, which require the installation of tracking cameras around the user to follow his head movements. Instead, a high resolution rgb camera is used for the object detection and an optional depth camera provides the exact distance between the observed object and the uFixit hardware.
@@ -16,22 +17,37 @@ Other optical see though glasses are of course also possible candidates for uFix
 The second class of supported hardware are mobile phones, especially in combination with projects like "Google Cardboard", which transform the phones to augmented reality glasses. The big advantage of mobile phones is, that they are already very common, and therefore uFixit can be used by many people without spending extra money on additional hardware. Recent smart phones also meet all the basic requirements for our application, as they already include high resolution cameras, sufficient computational power and a microphone for user input. We would also like to emphasize that devices, which are certified by Google's "Project Tango" are especially suited for uFixit, as those devices provide an additional depth camera for an even better user experience.
 				
 
-\section{Software (computer vison part)}
-	      - Objekterkennung für Erstellung der Anleitung
-			- Zusätzliche Marker für Erkennung ?
-			- Feature matching (Nutzer bestimmte Geräteperspektiven vorgeben)
-			- Schwierig: Defektes/Deformiertes Gerät erkennen
-			- Manuelle Auswahl (?)
+\section{Software}
+\subsection{Computer Vison}
+To provide the best augmented experience possible, it is essential, that the virtual objects and annotations of the uFixit manual always remain at the same spatial position in relation to the objects they are enhancing in the real world. To compute this relative spatial relation, the uFixit uses two different approaches. The first one uses the RGB camera of the augmented reality glasses to detect the features of the parts to be enhanced and is tracking these features from frame to frame throughout the video stream. The system now uses the information about the feature positions, to overlay the annotations provided by the manual onto the users view of the real world.
+As uFixit is a platform for repairing broken or deformed parts, it might be impossible for the system to detect the features of the object in question. This is why it is also possible for the creator of the manuals to supply position for optional Fiducial Markers. The user prints these markers on paper and attaches them to specific locations of the item, as predefined by the creator of the manual.
+The big advantage of the markers is, that compared to object features, marker have a predefined shape and few colors. Therefore they are recognized more easily by the system. If an object is too small for markers to be placed on it, there is also the possibility of printing a big paper sheet, with markers on its edges. The user then has to position the object he would like to repair at the center of the sheet. This makes it possible for the tracking system, to show an augmentation of the object, because it is simply tracking the paper sheet, with the object being at an known offset to it.
 
-\subsection{Software (manual creation, manufacturer)}
-		- complicated 3D CAD software
+As described in the hardware section \ref{sec:hardware}, uFixit also supports an optional depth camera. This adds the feature of occluded virtual elements to the system, as the additional depth information enables the application, to determine the exact distance between the item watched and the AR glasses. Therefore, if an virtual annotation is attached to the other side of the object, uFixit is able to temporarily hide this information from the user, until the item is again flipped around. This helps the user to better understand the spatial relation of the virtual annotations to the real word object.
+As this is an optional feature, the application also works without a depth sensor. The only drawback is, that all annotations of a manual step are visible all the time, even though if they should be occluded by an part of the real object.
 
-\subsection{Software (manual creation, end user)}
-		- Einbindung von Zeigern, Animationen, Text, ...
-		- Fertige Animationen (Schraube die sich raus dreht)
-		- Wie im Raum platzieren
-		- Prototype concept
-			- Example pictures how the software looks like
+\subsection{Manual creation (Manufacturer)}
+Instead of shipping paper manuals with their product, uFixit provides an alternative solution for manufacturers. The big advantage of an digital manual is, that errors in the manual or information updated to the product do not require a reprint of the whole manual, but only an update of the uFixit database. Nowadays, industrial products are designed in CAD software like "Solidworks". These softwares also already provide animation of the designed items, including object movement (like rotating screws), highlighting, or adding text objects for explanations. This is why uFixit provides an import interface for industrial instruction creators that is able to import CAD projects and use it as a part of an uFixit manual. Each of the imported snippets then makes up one step of the final instruction set. As a last step, the manual is registered with the features of the object by using an uFixit compatible hardware device with depth camera.
+
+\subsection{Manual creation (End User)}
+Each uFixit user is also able to create own instruction sets and provide them to the community. For the creation, the same hardware is used as if following an manual with the constraint that a depth camera is a requirement for precise spatial registration of the manual with the key features of the object. For each step of the instruction manual, there are the following annotations possibilities to add information:
+
+\begin{itemize}
+\item Arrows
+\item Text
+\item Highlighting
+\end{itemize}
+
+To annotate items, uFixit uses representations of the annotations in paper form. If for example, an arrow should be added to the current manual step, the user holds the piece of paper with the printed arrow symbol at the position, where the arrow should appear in the manual. The position is then finalized by speech command ("Attach Here"). The text item is positioned in exactly the same way. The text is then filled in also using speech recognition. Highlighting works in the way, that the manual creator moves the tip of the printed highlighter at the start position. Highlighting begins and stops by speech command and all locations of the highlighter tip in between the two commands are then highlighted.
 
 \subsection{Live support}
-		- Highlighting, Arrows, Painting, Audio
+In contrast to the static manuals, the uFixit live support focuses on quick and simple features. Writing annotation texts or creating animations simply takes too much time for the live scenario. This is why the live support limits the possibilities for augmentation to these four features:
+\begin{itemize}
+\item Arrows
+\item Highlighting
+\item Sketches
+\item Audio
+\end{itemize}
+
+In contrast to all other functions of uFixit, the person providing live support uses a tablet device for the interaction. On the tablet, the live stream of the AR device camera is displayed. The "Fixer" now draws and positions the annotations using the touch screen of the tablet.
+Due to the visual object tracking by camera, the software is able to anchor the visual annotations of the fixer at the location in space where they were created. If the live support draws or highlights specific locations of the camera view, these annotations remain with the object, even if the camera view changes. To avoid scrawly drawings because the constantly changing camera view, the camera stream can be frozen. That means, that the annotations are drawn onto one image of the view, but are still updated live onto the augmented view.

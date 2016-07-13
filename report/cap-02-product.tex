@@ -13,12 +13,15 @@
 
 	As one can see in \autoref{fig:involved-parties}, \textbf{Experts} and \textbf{Manufacturers} create the manuals, whereas \textbf{Fixers} use them on their own device. An Expert is a person that has the same equipment as the end user, but does create manuals. He will not have special training or software to do so. Manufacturers on the other side have detailed information and models of their products and therefore can develop high quality instruction steps with animations and extensive highlightings.
 	
-	After describing how the instructions inside a manual will look like, we discuss how uFixit helps experts as well as manufacturers in creating the best possible manuals for the end user.
+	After describing how the instructions inside a manual will look like, we discuss how uFixit helps experts as well as manufacturers in creating the best possible manuals for the end user. For the conclusion of this chapter we will have a look at how the experts will be motivated to create content for our platform.
 
 
 	\section{Instructions format}
 	
-		Every manual will be separated into several individual steps. Each of these steps will ask the user to perform a specific task to fulfill. After that, the manual must transition to the next step. There are a few different possibilities:
+		Every manual will be separated into several individual steps. The first step is always the diagnosis because to do the repair itself, we do need to know what is broken. While holding the defective part into the FOV of the camera, uFixit will try to match it to a internal database. If this succeeds, the next step is to get the right manual and the suitable tools.
+		
+		
+		After this preparation phase, the actual repair process begins. Each of the steps will ask the user to perform a specific task to fulfill. Subsequently the manual must transition to the next step. There are a few different possibilities:
 		
 		\begin{itemize}
 			\itemsep0em
@@ -26,8 +29,6 @@
 			\item Ideally the used device has a microphone built in. With that, the fixer simply can issue a voice command.
 			\item Although it is more of a feature to jump to a specific step in the tutorial, forward and backward buttons will be provided on screen for easy access.
 		\end{itemize}
-		
-		
 		
 		\begin{figure}[H]
 			\includegraphics[width=\textwidth, trim=4cm 3cm 4cm 4cm, clip]{../images/instr-hammer.pdf}
@@ -48,6 +49,7 @@
 	
 	\section{Using existing AR hardware devices}
 	
+		One of the clous abouts uFixit is, the fixer can use almost every AR device on the market. It only has to fulfill a certain list of requirement that you can see in chapter 3. Although users will get the most excellent experience with AR head mounted devices like the Microsoft HoloLens or the Meta 2 (\autoref{fig:meta2}), other devices like smartphones are also supported.
 		
 		\begin{figure}[H]
 			\centering
@@ -56,12 +58,16 @@
 			\label{fig:meta2}
 		\end{figure}
 		
+		One outstanding example of this kind, which will receive special support, is Google's Project Tango. This is basically an augmented reality platform definition for Android based phones and tables.
+		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.7\linewidth]{../images/project-tango}
-			\caption{}
+			\caption{Registration visualized using Project Tango by Google}
 			\label{fig:project-tango}
 		\end{figure}
+		
+		Of course if one does not have a suitable device, the manuals always can be watched using a webbrowser on out web portal as simple classical pages.
 		
 	
 	\section{Software}
@@ -94,7 +100,9 @@
 			
 			- AR head mounted devices
 
+	\section{Experts Motivation}
 	
+	\section{Feedback}
 
 %
 %

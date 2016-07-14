@@ -17,6 +17,7 @@
 
 
 	\section{Instructions format}
+	\label{sec:instr-format}
 	
 		Every manual will be separated into several individual steps. The first step is always the diagnosis because to do the repair itself, we do need to know what is broken. While holding the defective part into the FOV of the camera, uFixit will try to match it to a internal database. If this succeeds, the next step is to get the right manual and the suitable tools.
 		
@@ -72,8 +73,8 @@
 	
 	\section{Software}
 	
-		- two approaches: simple CMCS, complex hard to learn 3D CAD software
-		
+		To create the manuals we were talking about in \eqref{sec:instr-format}, we need special software. This will be the major products uFixit will ship. One are a plugins for a variety of well-established 3D CAD software which is already used to design the products. Before discussing this, the focus will be the other one: an application for the Experts that do not have special software but only the same devices as the end user.
+	
 		\subsection{Our gem: Community Manual Creation Software}
 		
 			- for everyone that owns an AR device
@@ -102,30 +103,21 @@
 
 	\section{Experts Motivation}
 	
+		uFixit relies heavily on the Fixers to get involved in the community and to start creating own manuals. This can solely be based on idealism. Believing this would work on the other hand is pretty naive. Our solution: Money!
+		
+		Many big software companies nowadays have something called bug bounty program. This means if a person finds a bug of a certain severity in the manufacturers product, he will get rewarded when reporting it. This is very convenient for the company considering they do not have to pay everyone that is searching for these flaws in the software.
+		
+		We want the same principle integrated into uFixit. Experts should be lured into a \textbf{manual bounty program} that will reward them every time a Fixer solves a problem using his tutorial. The money will come from the manufacturer who themselves do not have to pay for personal but rather only a small amount for high quality content.
+	
 	\section{Feedback}
+	
+		To provide the user with highest quality manuals, there will be an opportunity to rate each an every of them within a review system. Online shopping nowadays would be unimaginable without reviews just because no one likes to buy untested stuff. Especially when the end user needs quick and good help, he might invest in a manual that has a 100\% rating instead first trying the free to use 75\% one.
 
-%
-%
-%\begin{itemize}
-%	\itemsep0em
-%	\item consumer and helper use AR device > simple and intuitive input \begin{itemize}
-%		\itemsep0em
-%		\item uses AR device input! > can be different for each device!
-%		\item must at all cost be intuitive! > limitations
-%	\end{itemize}
-%	\item manufacture has possibility for high quality software \begin{itemize}
-%		\itemsep0em
-%		\item 3D CAD models, ...
-%		\item highly customizable
-%		\item animated, ...
-%	\end{itemize}
-%	\item Possible interactions: \begin{itemize}
-%		\itemsep0em
-%		\item manuals from manufacturer to consumer
-%		\item live support from manufacture to consumer
-%		\item feedback from consumer to manufacture
-%		\item manuals from helpers (Fixers) to consumer
-%		\item live support from helpers (Fixers) to consumer
-%		\item reward system (?), freelancer contracts from manufacture to helpers (Fixers)
-%	\end{itemize}
-%\end{itemize}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{../images/how-to-get-amazon-reviews-kindle.jpg}
+			\caption{Example of product reviews on \url{amazon.com} with a overwhelming good average rating}
+			\label{fig:amazon-reviews}
+		\end{figure}
+		
+		\autoref{fig:amazon-reviews} is a screenshot from the \url{amazon.com} website. It shows a product review page with an overwhelming good average rating. Most of the users would now be convinced this is a great product and buy it without further research or thinking. the uFixit review system will be quite similar to this one because it will increase community involvement and building.
